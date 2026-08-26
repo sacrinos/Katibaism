@@ -81,6 +81,25 @@ export interface Citation {
   verified: boolean;
 }
 
+export type Article24Answer = "yes" | "no" | "unclear" | "partial";
+
+export interface Article24Question {
+  id: string;
+  question: string;
+  articleAnchor: string;
+  finding: Article24Answer;
+  evidence: string;
+  note: string;
+}
+
+export interface Article24Test {
+  version: string;
+  applicable: boolean;
+  rightLimited: string;
+  questions: Article24Question[];
+  summary: string;
+}
+
 export interface WhyFlagged {
   triggeringLanguage: string[];
   concept: string;
@@ -114,6 +133,7 @@ export interface Finding {
   rulesTriggered: string[];
   humanReviewRecommended: boolean;
   whyFlagged: WhyFlagged;
+  article24Test?: Article24Test;
   feedback?: FindingFeedback;
 }
 

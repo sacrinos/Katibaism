@@ -26,5 +26,7 @@ describe("analysis pipeline", () => {
     expect(articles.some((a) => a.startsWith("Article 94"))).toBe(true);
     expect(articles).toContain("Article 2");
     expect(articles).toContain("Article 47");
+    const art24 = result.findings.find((f) => f.article24Test);
+    expect(art24?.article24Test?.questions).toHaveLength(8);
   });
 });

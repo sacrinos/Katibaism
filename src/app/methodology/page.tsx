@@ -9,9 +9,10 @@ export default function MethodologyPage() {
         unreliable legal hallucinations. The Constitution is the authoritative source.
       </p>
       <ol className="mt-10 list-decimal space-y-4 pl-5">
-        <li>Extract and structure the Bill, clause by clause.</li>
+        <li>Extract and structure the Bill, clause by clause. Text PDFs are read first; scanned pages go through OCR.</li>
         <li>Retrieve relevant articles from a versioned Constitution of Kenya, 2010 knowledge base published by Kenya Law.</li>
         <li>Run deterministic tests: conflict, rights limitation, delegation, procedure, money, institutions, equality, administrative justice, offences, hidden issues, and system-level escape hatches.</li>
+        <li>Where a finding cites Article 24, walk Test B — eight questions from Article 24(1)–(2): by law, nature of the right, purpose, extent, rights of others, necessity, less restrictive means, and disproportionate impact / specificity. The walk surfaces evidence. It does not declare the clause unconstitutional.</li>
         <li>Optionally, an LLM refines wording of already-cited findings. It cannot invent articles.</li>
         <li>A citation verifier rejects any finding whose quotation is not in the knowledge base.</li>
         <li>Every finding includes a counterargument and a confidence score for the analysis, not a court-outcome prediction.</li>

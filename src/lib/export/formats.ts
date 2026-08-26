@@ -74,6 +74,19 @@ export function toMarkdown(bill: BillRecord): string {
       `> ${finding.clauseText}`,
       "",
     );
+    if (finding.article24Test) {
+      lines.push(
+        "**Article 24 Test B**",
+        "",
+        finding.article24Test.summary,
+        "",
+        ...finding.article24Test.questions.map(
+          (q, i) =>
+            `${i + 1}. ${q.question} (${q.articleAnchor}) — **${q.finding}**. ${q.note}${q.evidence ? ` Evidence: ${q.evidence}` : ""}`,
+        ),
+        "",
+      );
+    }
   }
 
   lines.push(

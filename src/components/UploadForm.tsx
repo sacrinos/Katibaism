@@ -89,7 +89,7 @@ export function UploadForm() {
               onChange={(e) => setFile(e.target.files?.[0] ?? null)}
             />
             <span className="serif text-lg text-ink">{file ? file.name : "Drop a PDF, Word or text file"}</span>
-            <span className="mt-2">PDF text extraction is used first. Image-only scans should be pasted as text.</span>
+            <span className="mt-2">Text PDFs are read first. Scanned pages are sent through OCR.</span>
           </label>
         )}
       </div>

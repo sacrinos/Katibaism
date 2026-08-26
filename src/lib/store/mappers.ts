@@ -69,6 +69,9 @@ export function findingRowToFinding(row: FindingRow): Finding {
     rulesTriggered: row.rules_triggered as string[],
     humanReviewRecommended: row.human_review_recommended,
     whyFlagged: row.why_flagged as Finding["whyFlagged"],
+    article24Test:
+      (row.why_flagged as { article24Test?: Finding["article24Test"] } | null)?.article24Test ??
+      undefined,
     feedback: (row.feedback as FindingFeedback | null) ?? undefined,
   };
 }
@@ -121,7 +124,9 @@ export function findingToRow(finding: Finding, billId: string): Database["public
     triggering_language: finding.triggeringLanguage,
     concepts: finding.concepts,
     rules_triggered: finding.rulesTriggered,
-    why_flagged: finding.whyFlagged,
+    why_flagged: finding.article24Test
+      ? { ...finding.whyFlagged, article24Test: finding.article24Test }
+      : finding.whyFlagged,
     human_review_recommended: finding.humanReviewRecommended,
     feedback: finding.feedback ?? null,
   };

@@ -1,3 +1,4 @@
+import { isSparsePdfText, ocrSparsePdf } from "@/lib/extraction/ocr";
 import { extractMetadata, segmentClauses } from "@/lib/extraction/segment";
 import type { BillMetadata } from "@/lib/extraction/segment";
 import type { Clause } from "@/lib/types";
@@ -6,7 +7,7 @@ export interface ExtractedDocument {
   text: string;
   metadata: BillMetadata;
   clauses: Clause[];
-  method: "text" | "pdf" | "docx" | "url";
+  method: "text" | "pdf" | "docx" | "url" | "ocr";
 }
 
 function looksLikePdf(buffer: Buffer, filename: string): boolean {
@@ -36,14 +37,19 @@ export async function extractFromFile(
     const parser = new PDFParse({ data: new Uint8Array(buffer) });
     try {
       const result = await parser.getText();
-      const text = result.text?.trim() || "";
-      if (text.length < 40) {
+      let text = result.text?.trim() || "";
+      let method: ExtractedDocument["method"] = "pdf";
+      if (isSparsePdfText(text)) {
+        text = (await ocrSparsePdf(parser)).trim();
+        method = "ocr";
+      }
+      if (isSparsePdfText(text)) {
         throw new Error(
-          "PDF text extraction returned too little text. The file may be a scan; OCR is not enabled in this environment. Paste the Bill text instead.",
+          "PDF text extraction and OCR both returned too little text. Try a clearer scan or paste the Bill text.",
         );
       }
       const metadata = extractMetadata(text);
-      return { text, metadata, clauses: segmentClauses(text), method: "pdf" };
+      return { text, metadata, clauses: segmentClauses(text), method };
     } finally {
       await parser.destroy();
     }

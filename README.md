@@ -23,11 +23,11 @@ Katibaism is not a court and does not give legal advice.
 ## What it does
 
 1. Upload a PDF or Word file, paste Bill text, or fetch an official Parliament / Kenya Law URL.
-2. Extract and segment clauses.
+2. Extract and segment clauses. Text PDFs are read first; scanned pages go through OCR.
 3. Retrieve relevant articles from a versioned Kenya Law knowledge base.
 4. Run deterministic constitutional tests (conflict, rights, delegation, procedure, money, institutions, equality, administrative justice, offences, hidden issues, escape hatches).
 5. Verify every citation against the knowledge base.
-6. Show the clause beside the Constitution, with a counterargument, severity and confidence.
+6. Show the clause beside the Constitution, with a counterargument, severity and confidence. Rights findings that cite Article 24 walk Test B (eight questions) instead of only pointing at the article.
 7. Export Markdown, JSON or CSV, and print a PDF-ready report.
 
 ## Run it

@@ -1,5 +1,6 @@
 import { getProvision } from "@/lib/constitution/load";
 import { quoteFromProvision } from "@/lib/constitution/retrieve";
+import { shouldWalkArticle24, walkArticle24 } from "@/lib/rules/article24";
 import type {
   BillClassification,
   Citation,
@@ -11,7 +12,7 @@ import type {
 } from "@/lib/types";
 import { nanoid } from "nanoid";
 
-export const RULES_VERSION = "rules.v1";
+export const RULES_VERSION = "rules.v2";
 
 interface RuleHit {
   ruleId: string;
@@ -857,6 +858,15 @@ export function hitsToFindings(clause: Clause, hits: RuleHit[]): Finding[] {
       concepts: [hit.concept],
       rulesTriggered: [hit.ruleId],
       humanReviewRecommended: hit.humanReviewRecommended,
+      article24Test: shouldWalkArticle24(hit.provisionIds)
+        ? walkArticle24(clause, {
+            title: hit.title,
+            concept: hit.concept,
+            provisionIds: hit.provisionIds,
+            triggeringLanguage: hit.triggeringLanguage,
+            whatItDoes: hit.whatItDoes,
+          })
+        : undefined,
       whyFlagged: {
         triggeringLanguage: hit.triggeringLanguage,
         concept: hit.concept,

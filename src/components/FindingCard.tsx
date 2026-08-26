@@ -99,6 +99,31 @@ export function FindingCard({
         <p className="mt-2 leading-7">{finding.counterargument}</p>
       </div>
 
+      {finding.article24Test && (
+        <div className="mt-5 border-t border-rule pt-4">
+          <p className="text-xs uppercase tracking-[0.16em] text-ink-soft">
+            Article 24 · Test B
+          </p>
+          <p className="mt-2 text-sm leading-7">{finding.article24Test.summary}</p>
+          <ol className="mt-4 space-y-3">
+            {finding.article24Test.questions.map((q, index) => (
+              <li key={q.id} className="rounded-md border border-rule bg-white p-3">
+                <p className="text-sm font-medium">
+                  {index + 1}. {q.question}
+                </p>
+                <p className="mt-1 text-xs uppercase tracking-[0.12em] text-ink-soft">
+                  {q.articleAnchor} · {q.finding}
+                </p>
+                <p className="mt-2 text-sm leading-6">{q.note}</p>
+                {q.evidence && (
+                  <p className="mt-2 text-sm leading-6 text-ink-soft">Evidence: {q.evidence}</p>
+                )}
+              </li>
+            ))}
+          </ol>
+        </div>
+      )}
+
       <p className="mt-4 text-sm text-ink-soft">
         <span className="font-medium text-ink">What to investigate: </span>
         {finding.whatToInvestigate}
