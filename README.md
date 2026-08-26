@@ -2,12 +2,9 @@
 
 **Put every Bill against the Constitution.**
 
-Katibaism is constitutional intelligence for Kenya. It reads a proposed Bill
-clause by clause and tests it against the Constitution of Kenya, 2010.
+Katibaism is constitutional intelligence for Kenya. It reads a proposed Bill clause by clause and tests it against the Constitution of Kenya, 2010.
 
-It does not ask a language model whether a Bill is constitutional. The
-Constitution is the source of truth. Any model, if configured, only reasons
-over retrieved and verified text.
+It does not ask a language model whether a Bill is constitutional. The Constitution is the source of truth. Any model, if configured, only reasons over retrieved and verified text.
 
 Katibaism is not a court and does not give legal advice.
 
@@ -27,35 +24,45 @@ Katibaism is not a court and does not give legal advice.
 npm install
 npm test
 npm run dev
+```
 
-Open http://localhost:3000. Use Try the sample 2026 Bill to see the engine on a deliberately difficult draft.
+Open [http://localhost:3000](http://localhost:3000). Use **Try the sample 2026 Bill** to see the engine on a deliberately difficult draft.
 
-Optional LLM refinement: copy .env.example to .env.local and set one provider key. Without a key, the deterministic engine still produces cited findings.
+Optional LLM refinement: copy `.env.example` to `.env.local` and set one provider key. Without a key, the deterministic engine still produces cited findings.
 
-Knowledge base
-data/constitution/kenya-2010.v1.json is parsed from the official Kenya Law HTML publication of the Constitution of Kenya, 2010.
+## Knowledge base
 
+`data/constitution/kenya-2010.v1.json` is parsed from the official Kenya Law HTML publication of the Constitution of Kenya, 2010.
+
+```bash
 npm run constitution:parse
-Do not silently overwrite that file. Analyses record constitution_version, rules_version and timestamps.
+```
 
-How we work
-The Constitution, not the model, is the authoritative source.
-Every constitutional claim must carry a verified citation.
-Do not invent articles, quotations, cases or parliamentary procedures.
-Katibaism surfaces questions and evidence. It does not declare a Bill unconstitutional unless reporting a court decision.
-Analysis must not use political party, sponsor, ideology or popularity.
-Contributing
+Do not silently overwrite that file. Analyses record `constitution_version`, `rules_version` and timestamps.
+
+## How we work
+
+- The Constitution, not the model, is the authoritative source.
+- Every constitutional claim must carry a verified citation.
+- Do not invent articles, quotations, cases or parliamentary procedures.
+- Katibaism surfaces questions and evidence. It does not declare a Bill unconstitutional unless reporting a court decision.
+- Analysis must not use political party, sponsor, ideology or popularity.
+
+## Contributing
+
 This project is maintained in the open. If you want to help:
 
-Open an issue describing the problem or the constitutional test you want to add.
-Fork the repository and work on a branch.
-Add or update tests for any change to extraction, rules, retrieval or citation verification.
-Open a pull request.
+1. Open an issue describing the problem or the constitutional test you want to add.
+2. Fork the repository and work on a branch.
+3. Add or update tests for any change to extraction, rules, retrieval or citation verification.
+4. Open a pull request.
+
 Legal, product, journalism and engineering help are all welcome. High-risk findings should be reviewed by a Kenyan constitutional lawyer before they are treated as authoritative.
 
-License
+## License
+
 Copyright © 2026 Katibaism contributors.
 
-Licensed under the Apache License, Version 2.0. See LICENSE.
+Licensed under the Apache License, Version 2.0. See `LICENSE`.
 
-Constitutional text included in this repository is reproduced from the Kenya Law publication of the Constitution of Kenya, 2010.
+Constitutional text included in this repository is reproduced from the [Kenya Law](https://new.kenyalaw.org/akn/ke/act/2010/constitution) publication of the Constitution of Kenya, 2010.

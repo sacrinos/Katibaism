@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #14110e;
+  --ink-soft: #3a322b;
+  --paper: #f3ecdf;
+  --paper-deep: #e7dcc8;
+  --rule: #d4c6ae;
+  --red: #b11a21;
+  --red-deep: #7f1016;
+  --green: #0d6b32;
+  --green-deep: #084822;
+  --gold: #c5922a;
+  --critical: #9d1c24;
+  --high: #c05621;
+  --medium: #b8860b;
+  --low: #1d4e89;
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-paper: var(--paper);
+  --color-paper-deep: var(--paper-deep);
+  --color-rule: var(--rule);
+  --color-kenya-red: var(--red);
+  --color-kenya-green: var(--green);
+  --color-gold: var(--gold);
+  --font-sans: var(--font-source);
+  --font-serif: var(--font-newsreader);
+  --font-mono: var(--font-plex);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+body {
+  font-family: var(--font-sans), "Source Sans 3", sans-serif;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+.serif {
+  font-family: var(--font-serif), "Newsreader", serif;
+}
+
+.flag-bar {
+  height: 6px;
+  background: linear-gradient(
+    90deg,
+    #111 0 22%,
+    #fff 22% 24%,
+    #b11a21 24% 76%,
+    #fff 76% 78%,
+    #0d6b32 78% 100%
+  );
+}
+
+.paper-card {
+  background: #fffaf1;
+  border: 1px solid var(--rule);
+  box-shadow: 0 1px 0 rgba(20, 17, 14, 0.04);
+}
+
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(243, 236, 223, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(243, 236, 223, 0.08) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.rise {
+  animation: rise 0.5s ease both;
+}

@@ -1,0 +1,323 @@
+{
+  "version": "ontology.v1",
+  "description": "Semantic constitutional ontology. Maps legislative language to constitutional concepts and provisions without requiring explicit constitutional vocabulary.",
+  "mappings": [
+    {
+      "id": "delegation",
+      "concept": "delegated legislation",
+      "articles": ["Article 94", "Article 94"],
+      "provision_ids": ["art-94"],
+      "phrases": [
+        "cabinet secretary may",
+        "the authority may prescribe",
+        "the board may make regulations",
+        "may make regulations",
+        "may make rules",
+        "as prescribed",
+        "as may be prescribed",
+        "as may be determined",
+        "as the minister may direct",
+        "in such manner as may be prescribed",
+        "by notice in the gazette",
+        "may issue guidelines",
+        "may determine the manner"
+      ]
+    },
+    {
+      "id": "privacy",
+      "concept": "privacy",
+      "provision_ids": ["art-31"],
+      "phrases": [
+        "personal information",
+        "personal data",
+        "obtain any information",
+        "without notice",
+        "search",
+        "seize",
+        "surveillance",
+        "intercept",
+        "home or property",
+        "correspondence",
+        "communications",
+        "collect information from any person"
+      ]
+    },
+    {
+      "id": "information",
+      "concept": "access to information",
+      "provision_ids": ["art-35"],
+      "phrases": [
+        "deny access to records",
+        "shall not disclose",
+        "classified",
+        "withhold information",
+        "secret",
+        "not available to the public"
+      ]
+    },
+    {
+      "id": "property",
+      "concept": "property rights",
+      "provision_ids": ["art-40"],
+      "phrases": [
+        "seize property",
+        "compulsory acquisition",
+        "forfeit",
+        "forfeiture",
+        "confiscat",
+        "acquire land",
+        "expropriat",
+        "without compensation",
+        "intellectual property"
+      ]
+    },
+    {
+      "id": "admin_justice",
+      "concept": "fair administrative action",
+      "provision_ids": ["art-47"],
+      "phrases": [
+        "licence may be cancelled",
+        "license may be cancelled",
+        "without hearing",
+        "without giving reasons",
+        "revoke",
+        "suspen",
+        "cancel",
+        "inspect",
+        "permit",
+        "licence",
+        "license",
+        "registration",
+        "administrative decision",
+        "in its absolute discretion",
+        "final and not subject to appeal",
+        "shall not be questioned"
+      ]
+    },
+    {
+      "id": "fair_hearing",
+      "concept": "fair hearing",
+      "provision_ids": ["art-50", "art-25"],
+      "phrases": [
+        "shall not be appealed",
+        "not subject to review by any court",
+        "ouster",
+        "final and conclusive",
+        "no court shall",
+        "determine guilt",
+        "try an offence"
+      ]
+    },
+    {
+      "id": "access_justice",
+      "concept": "access to justice",
+      "provision_ids": ["art-48"],
+      "phrases": [
+        "no appeal",
+        "barred from approaching",
+        "shall not institute proceedings",
+        "oath of secrecy",
+        "prohibit legal proceedings"
+      ]
+    },
+    {
+      "id": "expression",
+      "concept": "freedom of expression",
+      "provision_ids": ["art-33"],
+      "phrases": [
+        "prohibit publication",
+        "censor",
+        "prior approval of content",
+        "shall not publish",
+        "criminalise speech",
+        "hate speech",
+        "false information"
+      ]
+    },
+    {
+      "id": "assembly",
+      "concept": "assembly",
+      "provision_ids": ["art-37"],
+      "phrases": [
+        "prohibit assembly",
+        "ban demonstration",
+        "permit to assemble",
+        "public gathering"
+      ]
+    },
+    {
+      "id": "equality",
+      "concept": "equality and non-discrimination",
+      "provision_ids": ["art-27"],
+      "phrases": [
+        "citizen only",
+        "kenyan citizens only",
+        "non-citizen",
+        "on the basis of sex",
+        "on the basis of age",
+        "disability",
+        "ethnicity",
+        "tribe",
+        "race",
+        "religion",
+        "political opinion",
+        "social origin",
+        "only men",
+        "only women"
+      ]
+    },
+    {
+      "id": "tax",
+      "concept": "taxation and public money",
+      "provision_ids": ["art-114", "art-209", "art-210", "art-201"],
+      "phrases": [
+        "tax",
+        "levy",
+        "fee",
+        "charge",
+        "cess",
+        "fund",
+        "appropriation",
+        "loan",
+        "guarantee",
+        "public money",
+        "expenditure",
+        "revenue",
+        "borrowing",
+        "impose a charge"
+      ]
+    },
+    {
+      "id": "money_bill",
+      "concept": "money Bill",
+      "provision_ids": ["art-114"],
+      "phrases": [
+        "imposition of a tax",
+        "imposition of a charge",
+        "appropriation of public money",
+        "audit of public money",
+        "public debt"
+      ]
+    },
+    {
+      "id": "county",
+      "concept": "Bills concerning county government",
+      "provision_ids": ["art-110", "art-185", "art-186", "sch-4-part-2"],
+      "phrases": [
+        "county government",
+        "county assembly",
+        "county executive",
+        "county function",
+        "devolved",
+        "agriculture",
+        "county health",
+        "county transport",
+        "trade licence",
+        "county roads",
+        "refuse removal",
+        "pre-primary"
+      ]
+    },
+    {
+      "id": "participation",
+      "concept": "public participation",
+      "provision_ids": ["art-10", "art-118"],
+      "phrases": [
+        "without public participation",
+        "no consultation",
+        "expedited",
+        "notwithstanding public participation"
+      ]
+    },
+    {
+      "id": "amendment",
+      "concept": "constitutional amendment",
+      "provision_ids": ["art-255", "art-256", "art-257"],
+      "phrases": [
+        "amend the constitution",
+        "notwithstanding the constitution",
+        "this constitution is hereby amended",
+        "article of the constitution"
+      ]
+    },
+    {
+      "id": "offence",
+      "concept": "offences and penalties",
+      "provision_ids": ["art-50", "art-49", "art-29", "art-25"],
+      "phrases": [
+        "commits an offence",
+        "liable on conviction",
+        "imprisonment",
+        "fine not exceeding",
+        "penalty",
+        "forfeiture"
+      ]
+    },
+    {
+      "id": "institution",
+      "concept": "constitutional institutions",
+      "provision_ids": ["art-248", "art-249", "art-88", "art-228", "art-229", "art-67", "art-233", "art-171"],
+      "phrases": [
+        "independent electoral and boundaries commission",
+        "iebc",
+        "auditor-general",
+        "controller of budget",
+        "commission on administrative justice",
+        "ethics and anti-corruption",
+        "judicial service commission",
+        "national land commission",
+        "public service commission"
+      ]
+    },
+    {
+      "id": "separation",
+      "concept": "separation of powers",
+      "provision_ids": ["art-1", "art-94", "art-160", "art-159", "art-165"],
+      "phrases": [
+        "not subject to the direction",
+        "shall not be questioned in any court",
+        "parliament shall appoint",
+        "cabinet secretary shall determine guilt",
+        "administrative body shall try"
+      ]
+    },
+    {
+      "id": "power",
+      "concept": "institutional power",
+      "provision_ids": ["art-1", "art-2", "art-94"],
+      "phrases": [
+        "cabinet secretary",
+        "the president may",
+        "the authority shall have power",
+        "the board may",
+        "the commission may",
+        "private entity shall exercise"
+      ]
+    },
+    {
+      "id": "labour",
+      "concept": "labour relations",
+      "provision_ids": ["art-41"],
+      "phrases": [
+        "dismiss",
+        "employment",
+        "trade union",
+        "strike",
+        "collective bargaining"
+      ]
+    },
+    {
+      "id": "non_derogable",
+      "concept": "rights that cannot be limited",
+      "provision_ids": ["art-25"],
+      "phrases": [
+        "torture",
+        "cruel, inhuman",
+        "slavery",
+        "servitude",
+        "deny a fair trial",
+        "habeas corpus shall not"
+      ]
+    }
+  ]
+}

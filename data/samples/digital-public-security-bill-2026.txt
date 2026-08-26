@@ -1,0 +1,102 @@
+THE DIGITAL PUBLIC SECURITY AND REGULATORY AUTHORITY BILL, 2026
+
+A Bill for
+
+AN ACT of Parliament to establish the Digital Public Security and Regulatory Authority; to authorise collection of information; to provide for licensing of digital services; to impose a digital security levy; to confer regulation-making powers; and for connected purposes.
+
+ENACTED by the Parliament of Kenya, as follows—
+
+PART I—PRELIMINARY
+
+1. This Act may be cited as the Digital Public Security and Regulatory Authority Act, 2026.
+
+Short title.
+
+2. In this Act, unless the context otherwise requires—
+"Authority" means the Digital Public Security and Regulatory Authority established under section 3;
+"Cabinet Secretary" means the Cabinet Secretary responsible for interior and national administration;
+"digital service" means any online platform, payment system, messaging service or data hosting facility offered to the public in Kenya;
+"levy" means the digital security levy imposed under section 8.
+
+Interpretation.
+
+PART II—THE AUTHORITY
+
+3. (1) There is established the Digital Public Security and Regulatory Authority.
+(2) The Authority shall be a body corporate with perpetual succession and a common seal.
+(3) The Authority shall have all powers necessary for the performance of its functions.
+
+Establishment of the Authority.
+
+4. The Authority shall—
+(a) licence and regulate digital services;
+(b) collect and analyse information relating to digital services;
+(c) advise the Cabinet Secretary on public security in the digital sphere; and
+(d) perform any other function that the Cabinet Secretary may assign.
+
+Functions.
+
+5. (1) The Authority shall have power to obtain any information from any person without notice, including personal information and correspondence, where the Authority considers it necessary for public security.
+(2) A person from whom information is sought shall comply immediately.
+
+Power to obtain information.
+
+6. (1) No person shall operate a digital service except in accordance with a licence issued by the Authority.
+(2) The Authority may, in its absolute discretion, refuse, suspend or cancel a licence without hearing the affected person and without giving reasons.
+(3) A decision of the Authority under this section shall be final and not subject to appeal.
+
+Licensing.
+
+7. The Authority may prescribe the form, fees and conditions of licences, and may determine the manner in which licensed persons shall operate.
+
+Licence conditions.
+
+PART III—FINANCE AND COUNTIES
+
+8. (1) There is imposed a digital security levy of two per cent of the gross revenue of every licensed digital service.
+(2) The levy shall be paid into a Digital Security Fund established by the Authority.
+(3) The Cabinet Secretary may, by notice in the Gazette, vary the rate of the levy.
+
+Digital security levy.
+
+9. Every county government shall, in respect of county health services, county roads and trade licences, implement digital security directions issued by the Authority, including directions on refuse removal contractors and pre-primary education facilities that use digital services.
+
+County implementation.
+
+10. A licence under this Act may be issued only to Kenyan citizens or to companies wholly owned by Kenyan citizens.
+
+Citizenship restriction.
+
+PART IV—ENFORCEMENT
+
+11. (1) A person who fails to comply with a request for information under section 5 commits an offence and is liable on conviction to a fine not exceeding five million shillings or to imprisonment for a term not exceeding five years, or to both.
+(2) The Authority may determine whether an offence under this section has been committed, and that determination shall not be questioned in any court.
+
+Offences.
+
+12. Where a person is convicted of an offence under this Act, any equipment used in connection with the offence shall be forfeited to the Authority without compensation.
+
+Forfeiture.
+
+13. The Authority shall not disclose records in its possession, and such records shall not be available to the public.
+
+Secrecy.
+
+14. Notwithstanding this Constitution, the provisions of this Act shall prevail in the event of any conflict with any other law.
+
+Supremacy of this Act.
+
+15. (1) The Cabinet Secretary may make regulations generally for the better carrying out of this Act.
+(2) Without prejudice to the generality of subsection (1), the Cabinet Secretary may make regulations on any matter the Cabinet Secretary considers necessary.
+
+Regulations.
+
+16. The Independent Electoral and Boundaries Commission shall, at the request of the Authority, provide voter and candidate data for digital security screening.
+
+IEBC data.
+
+17. A person serving a sentence under this Act shall not be entitled to an order of habeas corpus.
+
+Habeas corpus.
+
+18. This Act shall come into force on such date as the Cabinet Secretary may appoint.

@@ -1,0 +1,16 @@
+{
+  "bill": "Digital Public Security and Regulatory Authority Bill, 2026",
+  "notes": "Gold-standard fixture for the MVP sample Bill. Expert labels are illustrative until reviewed by Kenyan constitutional lawyers.",
+  "expected_triggers": [
+    { "clause": "5", "articles": ["Article 31", "Article 24"], "issue": "privacy without notice" },
+    { "clause": "6", "articles": ["Article 47"], "issue": "licence cancellation without hearing" },
+    { "clause": "8", "articles": ["Article 209", "Article 114"], "issue": "levy / public money" },
+    { "clause": "9", "articles": ["Article 110"], "issue": "county functions" },
+    { "clause": "10", "articles": ["Article 27"], "issue": "citizenship classification" },
+    { "clause": "11", "articles": ["Article 50", "Article 165"], "issue": "offence and ouster" },
+    { "clause": "14", "articles": ["Article 2"], "issue": "notwithstanding the Constitution" },
+    { "clause": "15", "articles": ["Article 94"], "issue": "incomplete delegation" },
+    { "clause": "16", "articles": ["Article 88", "Article 249"], "issue": "IEBC" },
+    { "clause": "17", "articles": ["Article 25"], "issue": "habeas corpus" }
+  ]
+}
