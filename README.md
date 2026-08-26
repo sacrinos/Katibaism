@@ -8,6 +8,18 @@ It does not ask a language model whether a Bill is constitutional. The Constitut
 
 Katibaism is not a court and does not give legal advice.
 
+## Demo
+
+![Katibaism landing page](docs/katibaism-landing-page.png)
+
+![Katibaism sample bill constitutional report](docs/katibaism-sample-bill-report.png)
+
+**Walkthrough (1:01)**
+
+<audio controls src="docs/katibaism-walkthrough.mp3"></audio>
+
+[Download walkthrough MP3](docs/katibaism-walkthrough.mp3)
+
 ## What it does
 
 1. Upload a PDF or Word file, paste Bill text, or fetch an official Parliament / Kenya Law URL.
