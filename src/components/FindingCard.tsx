@@ -9,10 +9,12 @@ export function FindingCard({
   finding,
   billId,
   slug,
+  siteUrl,
 }: {
   finding: Finding;
   billId: string;
   slug: string;
+  siteUrl: string;
 }) {
   const [view, setView] = useState<"citizen" | "legal">("citizen");
   const [open, setOpen] = useState(false);
@@ -29,8 +31,9 @@ export function FindingCard({
     });
   }
 
+  const reportUrl = `${siteUrl.replace(/\/$/, "")}/bills/${slug}`;
   const shareText = encodeURIComponent(
-    `KATIBAISM — Clause ${finding.clauseNumber} raises a potential ${finding.citations[0]?.citation} issue.\n\n${finding.citizenExplanation}\n\nhttps://katibaism.ke/bills/${slug}`,
+    `KATIBAISM — Clause ${finding.clauseNumber} raises a potential ${finding.citations[0]?.citation} issue.\n\n${finding.citizenExplanation}\n\n${reportUrl}`,
   );
 
   return (

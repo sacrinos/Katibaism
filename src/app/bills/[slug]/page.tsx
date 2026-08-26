@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { FindingCard } from "@/components/FindingCard";
 import { Disclaimer } from "@/components/Disclaimer";
 import { getBillBySlug } from "@/lib/store";
+import { publicSiteUrl } from "@/lib/site";
 import { OVERALL_META, SEVERITY_META } from "@/lib/labels";
 
 export const dynamic = "force-dynamic";
@@ -18,6 +19,7 @@ export default async function BillPage({ params }: { params: Promise<{ slug: str
   const bill = await getBillBySlug(slug);
   if (!bill) notFound();
   const overall = OVERALL_META[bill.summary.overall];
+  const siteUrl = publicSiteUrl();
 
   return (
     <div className="mx-auto max-w-6xl px-5 py-12">
@@ -152,7 +154,13 @@ export default async function BillPage({ params }: { params: Promise<{ slug: str
       <section className="mt-14 space-y-6">
         <h2 className="serif text-3xl">Findings</h2>
         {bill.findings.map((finding) => (
-          <FindingCard key={finding.id} finding={finding} billId={bill.id} slug={bill.slug} />
+          <FindingCard
+            key={finding.id}
+            finding={finding}
+            billId={bill.id}
+            slug={bill.slug}
+            siteUrl={siteUrl}
+          />
         ))}
       </section>
 
