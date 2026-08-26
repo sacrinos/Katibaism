@@ -80,8 +80,31 @@ npm start
 
 Set environment variables from `.env.example` in your hosting provider before deploying.
 
+## Publish on Vercel
+
+Katibaism is a Next.js app. Analyses persist in Supabase Postgres, so a serverless host works if `KATIBAISM_STORE=postgres` is set.
+
+1. Import `https://github.com/sacrinos/Katibaism` in [Vercel](https://vercel.com/new).
+2. Set these environment variables on the project (Production and Preview):
+
+```bash
+KATIBAISM_STORE=postgres
+SUPABASE_URL=https://qjbajqdmehqmrgqmowkf.supabase.co
+NEXT_PUBLIC_SUPABASE_URL=https://qjbajqdmehqmrgqmowkf.supabase.co
+SUPABASE_SERVICE_ROLE_KEY=<server-only service role key>
+NEXT_PUBLIC_SITE_URL=https://<your-vercel-domain>
+```
+
+3. Deploy. The first successful production deploy gives you a public URL such as `https://katibaism.vercel.app`.
+4. Point `katibaism.ke` at that project in Vercel once the preview looks right.
+5. After the live origin is known, set `NEXT_PUBLIC_SITE_URL` to that origin and redeploy so share cards use it.
+
+Share links use `NEXT_PUBLIC_SITE_URL`, then the Vercel production host, then `https://katibaism.ke`.
+
+The bill analysis route allows 60 seconds (`maxDuration`) so PDF extraction and the rules engine can finish on the host.
+
 ## Notes
 
 - Node.js 20 works; `nanoid@6` prefers Node 22+ but install succeeds on Node 20.
-- Bill analyses are stored under `data/runtime/` (gitignored). Ensure the host has a writable data directory if you persist analyses between restarts.
+- With `KATIBAISM_STORE=postgres`, analyses persist in Supabase. The local file store (`data/runtime/`, gitignored) is only the default for machines without Postgres env vars.
 - Do not silently overwrite `data/constitution/kenya-2010.v1.json`. Re-parse only with `npm run constitution:parse` when updating the knowledge base deliberately.

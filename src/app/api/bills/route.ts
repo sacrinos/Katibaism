@@ -9,6 +9,7 @@ import { uniqueSlug } from "@/lib/slug";
 import type { BillRecord, InputMethod } from "@/lib/types";
 
 export const runtime = "nodejs";
+export const maxDuration = 60;
 
 function emptyClassification() {
   return {

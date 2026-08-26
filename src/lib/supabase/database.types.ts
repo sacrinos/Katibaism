@@ -49,6 +49,7 @@ export interface Database {
           updated_at?: string;
         };
         Update: Partial<Database["public"]["Tables"]["bills"]["Insert"]>;
+        Relationships: [];
       };
       findings: {
         Row: {
@@ -108,13 +109,17 @@ export interface Database {
           updated_at?: string;
         };
         Update: Partial<Database["public"]["Tables"]["findings"]["Insert"]>;
+        Relationships: [];
       };
     };
+    Views: Record<string, never>;
     Functions: {
       katibaism_dashboard_stats: {
         Args: Record<string, never>;
         Returns: Json;
       };
     };
+    Enums: Record<string, never>;
+    CompositeTypes: Record<string, never>;
   };
 }

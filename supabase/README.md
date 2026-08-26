@@ -5,6 +5,7 @@ Run these in order in the [Supabase SQL Editor](https://supabase.com/dashboard/p
 1. `supabase/migrations/001_schema.sql`
 2. `supabase/migrations/002_rls.sql`
 3. `supabase/migrations/003_dashboard_function.sql`
+4. `supabase/migrations/004_fix_confidence_score.sql`
 
 ## Enable Postgres storage in the app
 
