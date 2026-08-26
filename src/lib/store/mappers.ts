@@ -10,7 +10,11 @@ import type {
   AnalysisVersions,
   RiskSummary,
 } from "@/lib/types";
-import type { Database } from "@/lib/supabase/database.types";
+import type { Database, Json } from "@/lib/supabase/database.types";
+
+function asJson(value: unknown): Json {
+  return value as Json;
+}
 
 type BillRow = Database["public"]["Tables"]["bills"]["Row"];
 type FindingRow = Database["public"]["Tables"]["findings"]["Row"];
@@ -33,11 +37,11 @@ export function billRowToRecord(row: BillRow, findings: Finding[]): BillRecord {
     originalFilename: row.original_filename,
     rawText: row.raw_text,
     explanatoryMemorandum: row.explanatory_memorandum,
-    clauses: row.clauses as Clause[],
+    clauses: row.clauses as unknown as Clause[],
     findings,
-    classification: row.classification as BillClassification,
-    summary: row.summary as RiskSummary,
-    versions: row.versions as AnalysisVersions,
+    classification: row.classification as unknown as BillClassification,
+    summary: row.summary as unknown as RiskSummary,
+    versions: row.versions as unknown as AnalysisVersions,
     status: row.status as BillStatus,
     createdAt: toIso(row.created_at),
     updatedAt: toIso(row.updated_at),
@@ -62,14 +66,14 @@ export function findingRowToFinding(row: FindingRow): Finding {
     severity: row.severity as Finding["severity"],
     confidence: row.confidence as Finding["confidence"],
     confidenceScore: Number(row.confidence_score),
-    provisionIds: row.provision_ids as string[],
-    citations: row.citations as Finding["citations"],
-    triggeringLanguage: row.triggering_language as string[],
-    concepts: row.concepts as string[],
-    rulesTriggered: row.rules_triggered as string[],
+    provisionIds: row.provision_ids as unknown as string[],
+    citations: row.citations as unknown as Finding["citations"],
+    triggeringLanguage: row.triggering_language as unknown as string[],
+    concepts: row.concepts as unknown as string[],
+    rulesTriggered: row.rules_triggered as unknown as string[],
     humanReviewRecommended: row.human_review_recommended,
-    whyFlagged: row.why_flagged as Finding["whyFlagged"],
-    feedback: (row.feedback as FindingFeedback | null) ?? undefined,
+    whyFlagged: row.why_flagged as unknown as Finding["whyFlagged"],
+    feedback: (row.feedback as unknown as FindingFeedback | null) ?? undefined,
   };
 }
 
@@ -87,10 +91,10 @@ export function billRecordToRow(bill: BillRecord): Database["public"]["Tables"][
     original_filename: bill.originalFilename,
     raw_text: bill.rawText,
     explanatory_memorandum: bill.explanatoryMemorandum,
-    clauses: bill.clauses,
-    classification: bill.classification,
-    summary: bill.summary,
-    versions: bill.versions,
+    clauses: asJson(bill.clauses),
+    classification: asJson(bill.classification),
+    summary: asJson(bill.summary),
+    versions: asJson(bill.versions),
     status: bill.status,
     error: bill.error ?? null,
     created_at: bill.createdAt,
@@ -116,14 +120,14 @@ export function findingToRow(finding: Finding, billId: string): Database["public
     severity: finding.severity,
     confidence: finding.confidence,
     confidence_score: finding.confidenceScore,
-    provision_ids: finding.provisionIds,
-    citations: finding.citations,
-    triggering_language: finding.triggeringLanguage,
-    concepts: finding.concepts,
-    rules_triggered: finding.rulesTriggered,
-    why_flagged: finding.whyFlagged,
+    provision_ids: asJson(finding.provisionIds),
+    citations: asJson(finding.citations),
+    triggering_language: asJson(finding.triggeringLanguage),
+    concepts: asJson(finding.concepts),
+    rules_triggered: asJson(finding.rulesTriggered),
+    why_flagged: asJson(finding.whyFlagged),
     human_review_recommended: finding.humanReviewRecommended,
-    feedback: finding.feedback ?? null,
+    feedback: finding.feedback ? asJson(finding.feedback) : null,
   };
 }
 

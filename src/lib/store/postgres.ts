@@ -1,4 +1,5 @@
 import { getSupabaseAdmin } from "@/lib/supabase/admin";
+import type { Database, Json } from "@/lib/supabase/database.types";
 import {
   billRecordToRow,
   billRowToRecord,
@@ -7,6 +8,8 @@ import {
   findingToRow,
 } from "@/lib/store/mappers";
 import type { BillRecord, DashboardStats, FindingFeedback } from "@/lib/types";
+
+type BillRow = Database["public"]["Tables"]["bills"]["Row"];
 
 async function loadFindings(billId: string) {
   const supabase = getSupabaseAdmin();
@@ -20,12 +23,12 @@ async function loadFindings(billId: string) {
   return (data ?? []).map(findingRowToFinding);
 }
 
-async function hydrateBill(row: NonNullable<Awaited<ReturnType<typeof fetchBillRow>>>): Promise<BillRecord> {
+async function hydrateBill(row: BillRow): Promise<BillRecord> {
   const findings = await loadFindings(row.id);
   return billRowToRecord(row, findings);
 }
 
-async function fetchBillRow(filter: { id?: string; slug?: string }) {
+async function fetchBillRow(filter: { id?: string; slug?: string }): Promise<BillRow | null> {
   const supabase = getSupabaseAdmin();
   let query = supabase.from("bills").select("*").limit(1);
   if (filter.id) query = query.eq("id", filter.id);
@@ -90,7 +93,7 @@ export async function recordFeedback(
   const supabase = getSupabaseAdmin();
   const { error } = await supabase
     .from("findings")
-    .update({ feedback, updated_at: bill.updatedAt })
+    .update({ feedback: feedback as unknown as Json, updated_at: bill.updatedAt })
     .eq("bill_id", billId)
     .eq("id", findingId);
 
