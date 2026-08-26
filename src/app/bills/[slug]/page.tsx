@@ -9,13 +9,13 @@ export const dynamic = "force-dynamic";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const bill = getBillBySlug(slug);
+  const bill = await getBillBySlug(slug);
   return { title: bill?.title ?? "Bill" };
 }
 
 export default async function BillPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const bill = getBillBySlug(slug);
+  const bill = await getBillBySlug(slug);
   if (!bill) notFound();
   const overall = OVERALL_META[bill.summary.overall];
 

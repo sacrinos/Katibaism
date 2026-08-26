@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getBill, getBillBySlug } from "@/lib/store";
+import { awaitStore, getBill, getBillBySlug } from "@/lib/store";
 import { toCsv, toMarkdown } from "@/lib/export/formats";
 
 export async function GET(
@@ -7,7 +7,7 @@ export async function GET(
   context: { params: Promise<{ id: string }> },
 ) {
   const { id } = await context.params;
-  const bill = getBill(id) || getBillBySlug(id);
+  const bill = (await awaitStore(getBill(id))) || (await awaitStore(getBillBySlug(id)));
   if (!bill) return NextResponse.json({ error: "Bill not found." }, { status: 404 });
   const format = new URL(request.url).searchParams.get("format") || "json";
 

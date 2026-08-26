@@ -6,7 +6,7 @@ export const dynamic = "force-dynamic";
 
 export default async function PrintPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const bill = getBillBySlug(slug);
+  const bill = await getBillBySlug(slug);
   if (!bill) notFound();
   const markdown = toMarkdown(bill);
 

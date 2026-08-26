@@ -8,8 +8,8 @@ export const metadata = {
   title: "Dashboard",
 };
 
-export default function DashboardPage() {
-  const stats = dashboardStats();
+export default async function DashboardPage() {
+  const stats = await dashboardStats();
   return (
     <div className="mx-auto max-w-6xl px-5 py-14">
       <p className="text-xs uppercase tracking-[0.2em] text-ink-soft">Watch Parliament · later</p>

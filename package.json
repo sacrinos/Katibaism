@@ -12,12 +12,14 @@
     "constitution:parse": "python3 scripts/parse-constitution.py"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.109.0",
     "mammoth": "^1.12.1",
     "nanoid": "^6.0.1",
     "next": "15.5.10",
     "pdf-parse": "^2.4.5",
     "react": "19.1.0",
     "react-dom": "19.1.0",
+    "ws": "^8.21.3",
     "zod": "^4.4.3"
   },
   "devDependencies": {

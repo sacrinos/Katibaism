@@ -4,7 +4,7 @@ import { NextResponse } from "next/server";
 import { nanoid } from "nanoid";
 import { extractFromFile, extractFromText, extractFromUrl } from "@/lib/extraction/extract";
 import { analyseClauses, applyAnalysis } from "@/lib/analysis/pipeline";
-import { listBills, saveBill } from "@/lib/store";
+import { awaitStore, listBills, saveBill } from "@/lib/store";
 import { uniqueSlug } from "@/lib/slug";
 import type { BillRecord, InputMethod } from "@/lib/types";
 
@@ -74,7 +74,7 @@ function newBill(partial: Partial<BillRecord> & Pick<BillRecord, "title" | "rawT
 }
 
 export async function GET() {
-  return NextResponse.json({ bills: listBills() });
+  return NextResponse.json({ bills: await awaitStore(listBills()) });
 }
 
 export async function POST(request: Request) {
@@ -154,10 +154,10 @@ export async function POST(request: Request) {
       explanatoryMemorandum: extracted.metadata.explanatoryMemorandum,
       clauses: extracted.clauses,
     });
-    bill = saveBill(bill);
+    bill = await awaitStore(saveBill(bill));
 
     const analysis = await analyseClauses(bill.clauses, bill.rawText);
-    bill = saveBill(applyAnalysis(bill, analysis));
+    bill = await awaitStore(saveBill(applyAnalysis(bill, analysis)));
 
     return NextResponse.json({ bill });
   } catch (error) {
